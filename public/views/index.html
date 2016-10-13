@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+    <head>
+        <title>The Littlest Pet Shoppe</title>
+        <script src="/vendor/jquery-3.1.1.min.js"></script>
+        <script src="/scripts/client.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
+        <link rel="stylesheet" href="style/style.css"  />
+    </head>
+    <body>
+        <main class="container">
+        <header>
+        <h1>Crud Up Pet Hotelle</h1>
+        </header>
+            <div class="owner-group">
+
+            <h2>Add an owner</h2>
+                <form id="owner-form">
+                    <div class="registerOwner">
+                        <label for="firstName">First Name:</label>
+                        <input type="text" id="firstName" name="firstName" class="form-control" />
+                        <label for="lastName">Last Name:</label>
+                        <input type="text" id="lastName" name="lastName" class="form-control" />
+
+                        <button id="owner-register" class="register">Register</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="pet-group">
+            <h2>Add a pet</h2>
+                <form id="pet-form">
+                    <div class="form-group">
+                        <select id="ownerSelection">
+
+
+                        </select>
+
+                        <label for="petName">Pet Name:</label>
+                        <input type="text" id="petName" name="petName"/>
+                        <label for="petBreed">Breed:</label>
+                        <input type="text" id="petBreed" name="petBreed"/>
+                        <label for="petColor">Color:</label>
+                        <input type="text" id="petColor" name="petColor" />
+                    </div>
+                </form>
+
+            </div>
+
+            <div class="visits">
+                <h2>Date of Visits</h2>
+                    <form id="visit-form">
+                        <label for="checkIn">Check-In Date</label>
+                        <input type="text" id="checkIn" name="checkIn" />
+                        <label for="checkOut">Check-Out Date</label>
+                        <input type="text" id="checkOut" name="checkOut" />
+                    </form>
+            </div>
+
+
+
+
+<ul id="owner-list">
+
+</ul>
+            </main>
+
+        </body>
+</html>
