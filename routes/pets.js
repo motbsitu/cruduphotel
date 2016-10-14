@@ -7,6 +7,32 @@ var config = {
 
 var pool = new pg.Pool(config);
 
+//to post new owners to database
+router.post('/', function(req, res) {
+    pool.connect(function(err, client, done) {
+        if (err) {
+            //printout err
+            console.log('Error connecting to the DB', err);
+            res.sendStatus(500); //send something to client
+            done(); //releases connection
+            return;
+        }
+
+        client.query('INSERT INTO owners (firstName, lastName) VALUES ($1, $2,) returning *;', //$1, etc placeholder
+            [req.body.first_name, req.body.last_name], //what replaced with
+            function(err, result) {
+                done();
+                if (err) {
+                    console.log("error querying database", err);
+                    res.sendStatus(500);
+                    return;
+                }
+                res.send(result.rows);
+
+            });
+    });
+});
+
 router.get('/:id', function(req, res){
     pool.connect(function(err, client, done){
         if(err){
